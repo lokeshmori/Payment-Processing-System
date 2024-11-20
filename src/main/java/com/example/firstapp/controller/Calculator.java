@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.firstapp.pojo.AddReq;
-import com.example.firstapp.service.AddNumbers;
+import com.example.firstapp.service.Interface.CalculatorService;
 import com.google.gson.Gson;
 
 import lombok.extern.slf4j.Slf4j;
@@ -20,14 +20,15 @@ import lombok.extern.slf4j.Slf4j;
 public class Calculator {
 	
 	
-	    private AddNumbers obj ;
+	    private CalculatorService obj ;
 	    private ApplicationContext ap ;
 	    private Random random ;
 	   private  Gson gson ;
 	private static final Logger logger = LoggerFactory.getLogger(Calculator.class);
 	
-	             public Calculator(ApplicationContext ap) {
+	             public Calculator(ApplicationContext ap , CalculatorService obj) {
 	            	       this.ap = ap ;
+	            	       this.obj =obj ;
 	            	       
 //	            	      String [] beanNames = ap.getBeanDefinitionNames();
 //	            	      
@@ -50,7 +51,7 @@ public class Calculator {
     	
     	      
     	
-    	   obj = ap.getBean(AddNumbers.class);
+    	   obj = ap.getBean(CalculatorService.class);
     	       gson = ap.getBean(Gson.class);
     	       String str =  gson.toJson(addReq);
     	       logger.info("obj to string convert : {}", str );

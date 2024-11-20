@@ -1,4 +1,4 @@
-package com.example.firstapp.controller;
+package com.example.firstapp.controller.Config;
 
 import java.util.Random;
 
