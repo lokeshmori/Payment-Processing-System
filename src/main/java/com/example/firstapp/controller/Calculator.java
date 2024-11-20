@@ -13,7 +13,10 @@ import com.example.firstapp.pojo.AddReq;
 import com.example.firstapp.service.AddNumbers;
 import com.google.gson.Gson;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class Calculator {
 	
 	
@@ -26,14 +29,15 @@ public class Calculator {
 	             public Calculator(ApplicationContext ap) {
 	            	       this.ap = ap ;
 	            	       
-	            	      String [] beanNames = ap.getBeanDefinitionNames();
-	            	      
-	            	      for(String beanName : beanNames) {
-	            	    	  
-	            	    	  logger.info(" Bean Name :{}" ,beanName);
-	            	    	    
-	            	      }
-					
+//	            	      String [] beanNames = ap.getBeanDefinitionNames();
+//	            	      
+//	            	      for(String beanName : beanNames) {
+//	            	    	  
+//	            	    	  logger.info(" Bean Name :{}" ,beanName);
+//	            	    	  log.info(" Bean Name :{}" ,beanName);
+//	            	    	    
+//	            	      }
+//					
 	            	 
 	            	// this.obj = obj ;
 				}
@@ -51,7 +55,8 @@ public class Calculator {
     	       String str =  gson.toJson(addReq);
     	       logger.info("obj to string convert : {}", str );
     	   int sum = obj.addNumbers(addReq);
-        logger.info("Sum retured after calculation: {}", sum );
+       // logger.info("Sum retured after calculation: {}", sum );
+        log.info("Sum retured after calculation: {}", sum );
         
            random = ap.getBean(Random.class);
            
