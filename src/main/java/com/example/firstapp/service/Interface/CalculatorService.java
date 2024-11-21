@@ -1,9 +1,10 @@
 package com.example.firstapp.service.Interface;
 
-import com.example.firstapp.pojo.AddReq;
+import com.example.firstapp.dto.AddReqDTO;
+import com.example.firstapp.dto.AddRespDTO;
 
 public interface CalculatorService {
 	
-	 public int addNumbers(AddReq addReq );
+	 public AddRespDTO addNumbers(AddReqDTO addReq );
 
 }

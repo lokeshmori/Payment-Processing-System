@@ -26,9 +26,33 @@
 		<tag/>
 		<url/>
 	</scm>
+	               
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+	
+	<profiles>
+    <!-- Development Profile -->
+    <profile>
+        <id>dev</id>
+        <properties>
+            <spring.profiles.active>dev</spring.profiles.active>
+        </properties>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+    </profile>
+
+    <!-- Quality Assurance Profile -->
+    <profile>
+        <id>qu</id>
+        <properties>
+            <spring.profiles.active>qu</spring.profiles.active>
+        </properties>
+    </profile>
+</profiles>
+	
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -58,6 +82,14 @@
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+<dependency>
+    <groupId>org.modelmapper</groupId>
+    <artifactId>modelmapper</artifactId>
+    <version>3.2.1</version>
 </dependency>
 
 
